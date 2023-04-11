@@ -72,13 +72,12 @@ body {
   display: flex;
   align-items: center;
   margin-right: auto;
-  transition: color var(--transition);
 }
 
-.header-navigation .link:hover,
+/* .header-navigation .link:hover,
 .header-navigation .link:focus {
   color: var(--hover-focus-color);
-}
+} */
 
 .header-logo {
   font-family: "Raleway", sans-serif;
@@ -102,44 +101,45 @@ body {
   transition: color var(--transition);
 }
 
-.header-list .link.current {
-  color: var(--hover-focus-color);
-}
-
 .header-link {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--sekond-title-color);
+  transition: color var(--transition);
+}
+
+.header-link:hover,
+.header-link:focus {
+  color: var(--hover-focus-color);
 }
 
 .current {
   position: relative;
+  color: var(--hover-focus-color);
 }
 
 .current::after {
   content: "";
   display: block;
   position: absolute;
-  bottom: -44px;
   width: 100%;
   height: 4px;
   left: 0;
   top: 44px;
-  background-color: #404bbf;
+  background-color: var(--hover-focus-color);
   border-radius: 2px;
 }
 
 .header-adress {
   font-style: normal;
-  transition: color var(--transition);
 }
 
-.header-adress .link:hover,
+/* .header-adress .link:hover,
 .header-adress .link:focus {
   color: var(--hover-focus-color);
-}
+} */
 
 .header-adress-list {
   display: flex;
@@ -154,6 +154,12 @@ body {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--text-color);
+  transition: color var(--transition);
+}
+
+.header-contact:hover,
+.header-contact:focus {
+  color: var(--hover-focus-color);
 }
 
 /* Hero */
@@ -440,6 +446,7 @@ body {
   width: 104px;
   height: 56px;
   fill: var(--color-subtle-text);
+  transition: fill var(--transition);
 }
 
 /* Footer */
@@ -531,7 +538,7 @@ body {
   padding: 16px 32px;
   border: 1px solid var(--border-bottom-color);
   transition: color var(--transition), background-color var(--transition),
-    box-shadow var(--transition);
+    box-shadow var(--transition), border-color var(--transition);
 }
 .btn:hover,
 .btn:focus {
@@ -539,6 +546,7 @@ body {
   background-color: var(--hover-focus-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-color: var(--hover-focus-color);
 }
 
 /* Our projects */
@@ -647,8 +655,17 @@ body {
   border-radius: 50%;
   background-color: #e7e9fc;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: auto;
+  transition: background-color var(--transition), fill var(--transition);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  background-color: var(--hover-focus-color);
+  fill: var(--main-title-color);
 }
 
 .is-hidden {
